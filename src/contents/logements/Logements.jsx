@@ -100,7 +100,7 @@ export default function Logements({ user }) {
   }
 
   const newListing = {
-    // Changed from array to object
+   
     id: 12,
     image:
       "https://images.pexels.com/photos/2422464/pexels-photo-2422464.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -110,7 +110,7 @@ export default function Logements({ user }) {
   };
 
   function addListing() {
-    setListings([...listings, newListing]); // Now adding a single object
+    setListings([...listings, newListing]); 
   }
 
   function indiqueId(id) {
@@ -160,7 +160,7 @@ export default function Logements({ user }) {
             <div className="flex justify-self-start items-center flex-wrap gap-3">
               {listings
                 .filter((listing) => {
-                  // Added safety check
+                  
                   return listing && listing.location
                     ? listing.location
                         .toLowerCase()
