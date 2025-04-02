@@ -29,7 +29,7 @@ function App() {
         toggleDark={toggleDark}
       />
       <main className="h-full wh mb-10">
-        <Logements user={user} />
+        <Logements user={user} dark={dark} />
         <Avis />
       </main>
       <Footer />

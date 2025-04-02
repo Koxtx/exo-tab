@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Onelogement from "./Onelogement";
 
-export default function Logements({ user }) {
+export default function Logements({ user, dark }) {
   const [listings, setListings] = useState([
     {
       id: 1,
@@ -100,7 +100,6 @@ export default function Logements({ user }) {
   }
 
   const newListing = {
-   
     id: 12,
     image:
       "https://images.pexels.com/photos/2422464/pexels-photo-2422464.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -110,7 +109,7 @@ export default function Logements({ user }) {
   };
 
   function addListing() {
-    setListings([...listings, newListing]); 
+    setListings([...listings, newListing]);
   }
 
   function indiqueId(id) {
@@ -152,7 +151,11 @@ export default function Logements({ user }) {
               />
               <button
                 onClick={addListing}
-                className="bg-gray-800 text-gray-50 px-4 py-2 rounded hover:bg-gray-600 transition"
+                className={`  ${
+                  dark
+                    ? " bg-gray-100 text-black"
+                    : "bg-gray-800 text-emerald-50"
+                } px-4 py-2 rounded hover:bg-gray-600 transition`}
               >
                 Add Logement
               </button>
@@ -160,7 +163,6 @@ export default function Logements({ user }) {
             <div className="flex justify-self-start items-center flex-wrap gap-3">
               {listings
                 .filter((listing) => {
-                  
                   return listing && listing.location
                     ? listing.location
                         .toLowerCase()
